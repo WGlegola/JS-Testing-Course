@@ -1,4 +1,4 @@
-import { assert, expect, it } from "vitest";
+import { assert, describe, expect, it } from "vitest";
 import { cleanNumbers, transformToNumber } from "./numbers";
 describe("transformToNumber()", () => {
   it("should yield number when given string", () => {
@@ -25,8 +25,9 @@ describe("transformToNumber()", () => {
 describe("cleanNumbers()", () => {
   it("should return an array of number values if an array of string number values is provided", () => {
     const numberValues = ["1", "2"];
-    const cleanNumbers = cleanNumbers(numberValues);
-    expect(cleanNumbers[0]).toBeTypeOf("number");
+    const cleanNumber = cleanNumbers(numberValues);
+    // expect(cleanNumbers[0]).toBeTypeOf("number");
+    expect(cleanNumber).toEqual([1, 2]);
   });
 
   it("should throw an error if an array with at least one empty string is provided", () => {
